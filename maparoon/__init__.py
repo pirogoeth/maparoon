@@ -72,6 +72,13 @@ def cli(interface: str):
                     upstream["management"]["ipv4"] = str(ipaddress.IPv4Address(mgmt_tlv.management_address))
 
                 upstream["management"]["interface_number"] = mgmt_tlv.interface_number
-                upstream["management"]["oid"] = mgmt_tlv.object_id
+
+                hex_oid = mgmt_tlv.object_id
+                pretty_oid = []
+                for oid_byte in bytearray(hex_oid):
+                    pretty_oid.append(str(int(oid_byte)))
+
+                pretty_oid = ".".join(pretty_oid)
+                upstream["management"]["oid"] = pretty_oid
 
             print(upstream)
