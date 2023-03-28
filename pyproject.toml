@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "maparoon"
+version = "0.1.0"
+description = ""
+authors = ["Nic Ballarini <me@nab.dev>", "Sean Johnson <me@seanj.dev>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+click = "^8.1.3"
+scapy = "^2.5.0"
+
+[tool.poetry.group.dev.dependencies]
+ipython = "^8.11.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+maparoon = "maparoon:cli"
